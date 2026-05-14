@@ -29,18 +29,35 @@ return {
               },
             })
           end,
+          lmstudio = function()
+            return require('codecompanion.adapters').extend('openai_compatible', {
+              env = {
+                url = 'http://localhost:1234',
+              },
+              schema = {
+                model = {
+                  default = 'local-model',
+                  -- The model name should match what's loaded in LM Studio
+                  -- Common options:
+                  -- 'deepseek-coder-6.7b-instruct'
+                  -- 'codellama-13b-instruct'
+                  -- Check LM Studio for the exact model name
+                },
+              },
+            })
+          end,
         },
 
-        -- Set default strategies to use Ollama
+        -- Set default strategies (change 'ollama' to 'lmstudio' to use LM Studio)
         strategies = {
           chat = {
-            adapter = 'ollama',
+            adapter = 'lmstudio',
           },
           inline = {
-            adapter = 'ollama',
+            adapter = 'lmstudio',
           },
           agent = {
-            adapter = 'ollama',
+            adapter = 'lmstudio',
           },
         },
 
