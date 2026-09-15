@@ -13,12 +13,13 @@ bookToc: true
 | Key | Action |
 |-----|--------|
 | `<Space>` (wait) | Show all keybindings automatically (which-key popup) |
-| `<Space>?` | Show all keybindings (which-key popup) |
+| `<Space>?` | Search all keybindings (Telescope fuzzy finder) |
+| `<Space>fk` | Search keybindings (Telescope fuzzy finder) |
 | `<Space><Space>` | Show all keybindings (which-key popup) |
 | `<Space>ck` | Toggle keymaps sidebar (persistent right panel) |
 | `<Space>cs` | Open cheatsheet (searchable via Telescope) |
 
-**Tip:** The keymaps sidebar (`<Space>ck`) provides a persistent view of all your shortcuts on the right side of the screen. Press `q` to close it.
+**Tip:** Use `<Space>?` or `<Space>fk` to fuzzy-search keybindings by description (e.g. type "copy" or "split" to find the relevant shortcut). The keymaps sidebar (`<Space>ck`) provides a persistent view of all your shortcuts on the right side of the screen. Press `q` to close it.
 
 ## Essential Keybindings
 
@@ -35,6 +36,7 @@ bookToc: true
 | `<Space>fr` | Recent files |
 | `<Space>fs` | Search in files (live grep) |
 | `<Space>fw` | Find string under cursor |
+| `<Space>fk` | Search keybindings (Telescope) |
 
 ### UI Customization
 | Key | Action |
@@ -239,8 +241,9 @@ When editing Cargo.toml files:
 ## Tips
 - **Leader key is `<Space>`** - Press it and wait to see all available commands!
 - **Multiple ways to see keybindings:**
+  - `<Space>?` or `<Space>fk` - Fuzzy-search keybindings via Telescope
+  - `<Space><Space>` - Which-key popup
   - `<Space>ck` - Persistent sidebar on the right (close with `q`)
-  - `<Space>?` - Which-key popup
   - `<Space>cs` - Searchable cheatsheet
 - Use `:Mason` to manage LSP servers
 - Use `:Lazy` to manage plugins

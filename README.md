@@ -14,7 +14,8 @@ Originally started as a Java-focused config, it has evolved into a polyglot deve
 ### Quick Reference
 **Don't know the keybindings?** Multiple ways to access help:
 - Press `<Space>` and wait! The which-key popup shows all available commands organized by category
-- Press `<Space>?` or `<Space><Space>` for which-key popup
+- Press `<Space>?` or `<Space>fk` to fuzzy-search all keybindings by description via Telescope
+- Press `<Space><Space>` for which-key popup
 - Press `<Space>ck` to toggle a persistent keymaps sidebar on the right
 - Press `<Space>cs` for a searchable cheatsheet via Telescope
 - Organized groups: Find, File Explorer, Split Windows, Tabs, Git, Code actions, and more
@@ -48,7 +49,8 @@ Originally started as a Java-focused config, it has evolved into a polyglot deve
 2. **Press `<Space>`** and wait to see all available keybindings
 3. **Essential keybindings:**
    - `<Space>ck` - Toggle keymaps sidebar (persistent)
-   - `<Space>?` - Show all keybindings (popup)
+    - `<Space>?` - Search all keybindings (Telescope fuzzy finder)
+    - `<Space>fk` - Search keybindings (Telescope)
    - `<Space>ne` - Toggle file explorer
    - `<Space>ff` - Find files
    - `<Space>fs` - Search in files

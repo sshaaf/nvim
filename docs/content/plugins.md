@@ -114,6 +114,7 @@ This page lists all the plugins that power this Neovim configuration, including 
 - **Version**: a0bbec21143c7bc5f8bb02e0005fa0b982edc026 (branch: 0.1.x)
 - **Description**: Highly extendable fuzzy finder over lists
 - **Repository**: [nvim-telescope/telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)
+- **Keybindings**: `<Space>ff` find files, `<Space>fr` recent files, `<Space>fs` live grep, `<Space>fw` grep word under cursor, `<Space>fk` search keybindings
 
 ### telescope-fzf-native.nvim
 - **Version**: 6fea601bd2b694c6f2ae08a6c6fab14930c60e2c
@@ -207,7 +208,7 @@ This configuration includes 8 color schemes with a Telescope-based theme switche
 - **Version**: 3aab2147e74890957785941f0c1ad87d0a44c15a
 - **Description**: Displays available keybindings in popup
 - **Repository**: [folke/which-key.nvim](https://github.com/folke/which-key.nvim)
-- **Keybindings**: `<Space>?` or `<Space><Space>` to show popup
+- **Keybindings**: `<Space>?` to search keybindings (Telescope), `<Space><Space>` to show which-key popup
 
 ### cheatsheet.nvim
 - **Description**: Searchable cheatsheet for keybindings and plugin commands via Telescope

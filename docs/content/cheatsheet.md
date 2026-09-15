@@ -15,7 +15,8 @@ When you forget a keybinding, use any of these methods:
 | Key | Action |
 |-----|--------|
 | `<Space>` (wait 500ms) | Show all keybindings automatically |
-| `<Space>?` | Show all keybindings (which-key popup) |
+| `<Space>?` | Search all keybindings (Telescope fuzzy finder) |
+| `<Space>fk` | Search keybindings (Telescope fuzzy finder) |
 | `<Space><Space>` | Show all keybindings (which-key popup) |
 | `<Space>ck` | Toggle persistent keymaps sidebar (right panel) |
 | `<Space>cs` | Open searchable cheatsheet (Telescope) |
@@ -150,6 +151,7 @@ When you forget a keybinding, use any of these methods:
 | `<Space>fr` | Find recent files |
 | `<Space>fs` | Live grep (search in files) |
 | `<Space>fw` | Find word under cursor |
+| `<Space>fk` | Search keybindings (Telescope) |
 | `<Space>ct` | Change colorscheme/theme (with live preview) |
 
 ### Inside Telescope
@@ -564,9 +566,10 @@ Combine with operators (`d`, `c`, `y`, `v`):
 ## Remember
 
 - **Leader key is `<Space>`** - Press and wait to see all available commands
+- Use `<Space>?` or `<Space>fk` to fuzzy-search keybindings via Telescope
+- Use `<Space><Space>` for which-key popup
 - Use `<Space>ck` for a persistent cheatsheet sidebar
 - Use `<Space>cs` for searchable cheatsheet via Telescope
-- Use `<Space>?` or `<Space><Space>` for which-key popup
 - Most actions can be undone with `u`
 - `:help <topic>` is your friend
 - `q` usually closes popup windows
