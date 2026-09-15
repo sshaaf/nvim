@@ -1,6 +1,3 @@
--- ~/.config/nvim/lua/neovim4j/plugins/rust.lua
--- Comprehensive Rust development setup based on LazyVim extras
-
 return {
   -------------------------------------------
   -- Rustaceanvim - Primary Rust plugin
@@ -12,7 +9,6 @@ return {
     opts = {
       server = {
         on_attach = function(_, bufnr)
-          -- Rustacean keybindings
           vim.keymap.set("n", "<leader>cR", function()
             vim.cmd.RustLsp('codeAction')
           end, { desc = "Code Action", buffer = bufnr })
@@ -26,13 +22,9 @@ return {
             cargo = {
               allFeatures = true,
               loadOutDirsFromCheck = true,
-              buildScripts = {
-                enable = true,
-              },
+              buildScripts = { enable = true },
             },
-            -- Enable check on save
             checkOnSave = true,
-            -- Configure check command separately
             check = {
               command = 'clippy',
               extraArgs = { '--no-deps' },
@@ -47,21 +39,12 @@ return {
             },
             files = {
               excludeDirs = {
-                '.direnv',
-                '.git',
-                '.github',
-                '.gitlab',
-                'bin',
-                'node_modules',
-                'target',
-                'venv',
+                '.direnv', '.git', '.github', '.gitlab',
+                'bin', 'node_modules', 'target', 'venv',
               },
             },
-            -- Disable semantic tokens to use treesitter highlighting
             semanticHighlighting = {
-              strings = {
-                enable = false,
-              },
+              strings = { enable = false },
             },
           },
         },
@@ -96,36 +79,6 @@ return {
   },
 
   -------------------------------------------
-  -- DAP setup for Rust debugging
-  -------------------------------------------
-  {
-    'mfussenegger/nvim-dap',
-    optional = true,
-    dependencies = {
-      {
-        'williamboman/mason.nvim',
-        opts = function(_, opts)
-          opts.ensure_installed = opts.ensure_installed or {}
-          vim.list_extend(opts.ensure_installed, { 'codelldb' })
-        end,
-      },
-    },
-  },
-
-  -------------------------------------------
-  -- Neotest with Rust support
-  -------------------------------------------
-  {
-    'nvim-neotest/neotest',
-    optional = true,
-    opts = {
-      adapters = {
-        ['rustaceanvim.neotest'] = {},
-      },
-    },
-  },
-
-  -------------------------------------------
   -- Ensure rust-analyzer via Mason
   -------------------------------------------
   {
@@ -134,32 +87,6 @@ return {
     opts = function(_, opts)
       opts.ensure_installed = opts.ensure_installed or {}
       vim.list_extend(opts.ensure_installed, { 'rust_analyzer' })
-    end,
-  },
-
-  -------------------------------------------
-  -- nvim-cmp integration for crates
-  -------------------------------------------
-  {
-    'hrsh7th/nvim-cmp',
-    optional = true,
-    dependencies = {
-      {
-        'saecki/crates.nvim',
-        event = { 'BufRead Cargo.toml' },
-        opts = {
-          lsp = {
-            enabled = true,
-            actions = true,
-            completion = true,
-            hover = true,
-          },
-        },
-      },
-    },
-    opts = function(_, opts)
-      opts.sources = opts.sources or {}
-      table.insert(opts.sources, { name = 'crates' })
     end,
   },
 }
